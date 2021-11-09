@@ -18,20 +18,20 @@ public class ScoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            this.scoreText.GetComponent<Text>().text = "score:" + t;
+        this.scoreText.GetComponent<Text>().text = "score:" + t;
     }
 
     void OnCollisionEnter(Collision other)
-    {
-        if (tag == "SmallStarTag")
+    { 
+        if (other.gameObject.tag == "SmallStarTag")
         {
             this.t += 1;
         }
-        else if (tag == "LargeStarTag")
+        else if (other.gameObject.tag == "LargeStarTag")
         {
             this.t += 3;
         }
-        else if (tag == "SmallCloudTag" || tag == "LargeCloudTag")
+        else if (other.gameObject.tag == "SmallCloudTag" || tag == "LargeCloudTag")
         {
             this.t += 5;
         }
